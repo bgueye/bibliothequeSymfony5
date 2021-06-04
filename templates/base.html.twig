@@ -1,19 +1,99 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+<!doctype html>
+<html lang="fr">
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mon template HTML-CSS">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Raleway:ital,wght@0,100;1,100&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/2a7b0c7d6a.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    {# Run `composer require symfony/webpack-encore-bundle`
+        and uncomment the following Encore helpers to start using Symfony UX #}
+    {% block stylesheets %}
+        {#{{ encore_entry_link_tags('app') }}#}
+    {% endblock %}
+
+    {% block javascripts %}
+        {#{{ encore_entry_script_tags('app') }}#}
+    {% endblock %}
+
+    <!-- mon CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+    <title>{% block title %}Bibliothèque Universitaire!{% endblock %}</title>
+    <link rel="shortcut icon" href="img/bocar.png">
+</head>
+
+<body>
+
+    <!--*****************NAVBAR***************** -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="img/bocar.png" alt="logo">BIBLIOTHÈQUE UNIVERSITAIRE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Présentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--*****************HEADER***************** -->
+
+    <header class="container-fluid">
+        <div class="row">
+
+            <div class="col-12 col-sm-6 formRechercher d-flex align-items-center">
+                <div>
+                    <h1>Bibliothèque Universitaire</h1>
+
+                    <form class="row">
+                        <div class="col-auto ms-auto">
+                            <input type="text " class="form-control " id="inputPassword2 " placeholder="Titre">
+                        </div>
+                        <div class="col-auto me-auto ">
+                            <button type="submit " class="btn btn-info ">Rechercher</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-sm-6 slogan">
+                <h2>Empruntez et lisez les meilleurs ouvrages </h2>
+            </div>
+        </div>
+    </header>
+
+    <!--*****************MAIN***************** -->
+    <div class="container" id="liste">
+        
         {% block body %}{% endblock %}
-    </body>
+        
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js "></script>
+
+</body>
+
 </html>
